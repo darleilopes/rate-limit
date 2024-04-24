@@ -3,9 +3,9 @@ O arquivo `config.yaml` possui as configurações de limitação de taxa para en
 ```yaml
 rate_limit:
   ips:
-    - ip: "192.168.3.1"
+    - ip: "192.168.1.1"
       limit: 10
-    - ip: "192.168.3.2"
+    - ip: "192.168.1.2"
       limit: 2
       expiration: 5
       block: 10
