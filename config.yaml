@@ -1,0 +1,13 @@
+rate_limit:
+  ips:
+    - ip: "192.168.3.1"
+      limit: 10
+    - ip: "192.168.3.2"
+      limit: 15
+  tokens:
+    - token: "tokenzinho"
+      limit: 2
+      expiration: 5
+      block: 10
+    - token: "tokend"
+      limit: 25

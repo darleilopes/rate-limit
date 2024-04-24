@@ -1,0 +1,21 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  rate_limiter:
+    image: "rate-limiter"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_ADDR=redis:6379
+      - DEFAULT_IP_EXPIRATION_TIME=10
+      - DEFAULT_TOKEN_EXPIRATION_TIME=5
+      - DEFAULT_IP_REQUEST_LIMIT=1
+      - DEFAULT_TOKEN_REQUEST_LIMIT=2
+      - DEFAULT_IP_BLOCK_DURATION=10
+      - DEFAULT_TOKEN_BLOCK_DURATION=5
+    ports:
+      - "8080:8080"
